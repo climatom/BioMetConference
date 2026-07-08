@@ -20,7 +20,7 @@ https://accounts.google.com/signup
 
 Open the following link in your web browser:
 
-**[[Workshop Colab notebook link]](https://github.com/climatom/BioMetConference/blob/main/00_test_environment.ipynb)**
+**[[Workshop Colab notebook link]](https://colab.research.google.com/github/climatom/BioMetConference/blob/main/00_test_environment.ipynb)**
 
 This will launch the notebook in Google Colab.
 
