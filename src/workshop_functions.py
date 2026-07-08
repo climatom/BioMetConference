@@ -179,3 +179,42 @@ def _cp_moist(q):
     return CPD * (1.0 - q) + CPV * q
 
 
+import numba as nb
+import numpy as np
+
+@nb.njit(parallel=True)
+def delta_te(rh, te, rh_ref, te_ref):
+    # Shape
+    nt, nr, nc = rh.shape
+
+    # Flatten query arrays
+    rh_query = rh.ravel()
+    te_query = te.ravel()
+
+    # Allocate output
+    n = rh_query.size
+    out = np.empty(n, dtype=np.float64)
+
+    # Ensure reference RH is ascending
+    if rh_ref[-1] < rh_ref[0]:
+        rh_ref_use = rh_ref[::-1]
+        te_ref_use = te_ref[::-1]
+    else:
+        rh_ref_use = rh_ref
+        te_ref_use = te_ref
+
+    # Loop over all points
+    for i in nb.prange(n):
+        crit_te = np.interp(
+            rh_query[i],
+            rh_ref_use,
+            te_ref_use,
+            left=te_ref_use[0],
+            right=te_ref_use[-1],
+        )
+
+        out[i] = crit_te - te_query[i]
+
+    return out.reshape(nt, nr, nc)
+
+
