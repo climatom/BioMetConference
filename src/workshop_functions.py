@@ -209,8 +209,6 @@ def delta_te(rh, te, rh_ref, te_ref):
             rh_query[i],
             rh_ref_use,
             te_ref_use,
-            left=te_ref_use[0],
-            right=te_ref_use[-1],
         )
 
         out[i] = crit_te - te_query[i]
