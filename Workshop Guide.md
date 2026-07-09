@@ -15,18 +15,15 @@ This notebook focuses on understanding and analysing humid heat.
 
 It is aimed at participants interested in:
 
-- climate and weather analysis
-- reanalysis datasets
-- understanding humid heat metrics
-- the physical basis of thermal stress
+- definitions of humid heat metrics
+- the physics of extreme heat events
+- observed climate datasets
 
-It walks through a case study of the June 2026 heatwave in the UK 
+It walks through a case study of the June 2026 heatwave in the UK. 
 
 **Open in Colab**
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/climatom/BioMetConference/blob/main/notebooks/01_HumidHeatMetrics.ipynb)
-
-https://colab.research.google.com/github/climatom/BioMetConference/blob/main/notebooks/01_HumidHeatMetrics.ipynb
 
 ---
 
